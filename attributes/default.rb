@@ -37,6 +37,7 @@ when "redhat", "centos", "fedora"
 else
   default["openvpn"]["group"] = "nogroup"
 end
+default["openvpn"]["tls_auth"] = false
 # Used by helper library to generate certificates/keys
 default["openvpn"]["key"]["ca_expire"] = 3650
 default["openvpn"]["key"]["expire"]    = 3650

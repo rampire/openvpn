@@ -11,3 +11,6 @@ cert <%= @username %>.crt
 key <%= @username %>.key
 comp-lzo
 verb 3
+<% if node["openvpn"]["tls_auth"] == true -%>
+tls-auth ta.key 1
+<% end -%>

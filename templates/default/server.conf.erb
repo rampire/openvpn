@@ -49,3 +49,7 @@ verb 1  # don't spam the log with messages.
 mute 10 # suppress identical messages > 10 occurances.
 
 script-security <%= node["openvpn"]["script_security"] %>
+
+<% if node["openvpn"]["tls_auth"] == true -%>
+tls-auth <%= node["openvpn"]["key_dir"] %>/ta.key 0
+<% end -%>
